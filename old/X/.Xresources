@@ -1,0 +1,26 @@
+! General
+URxvt.termName:     rxvt-unicode-256color
+URxvt.scrollBar:    False
+URxvt.saveLines:    1000
+URxvt.iso14755:     False
+URxvt.iso14755_52:  False
+
+! Fonts
+URxvt.font:   xft:Hack-12
+!URxvt.font:  xft:Monaco-12:antialias=true
+!URxvt.font:  xft:FixedFixedsys-15
+
+! Spacing
+URxvt.letterSpace: 0
+
+! Extensions
+URxvt.perl-ext-common: default,matcher,config-reload
+URxvt.urlLauncher:     chromium
+URxvt.matcher.button:  1
+
+
+! Color Scheme
+! MONDO-BEGIN
+#include ".xfiles/themes/dune"
+! MONDO-END
+#include ".xfiles/colors"

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# The license window is one of a few (3 so far)
+#   windows that have no title when wmctrl is executed.
+#   The other 2 are when closing dirty files and closing
+#   projects.
+# To account for this, we filter for the license popup's
+#   window dimensions which are unique (x=491, y=194).
+#   Dimensions might be y=194 on 2560x1440.
+# The script assumes you only have 1 Sublime window open
+#   in order to avoid focusing an open urxvt window after
+#   closing the popup. If you have more than 1 Sublime
+#   window, shame on you inefficient baboon.
+
+if [[ $1 == 1 ]]; then
+	no_title_wins="0x[a-z0-9]{8} (\d+ ){5}sublime_text\.Sublime_text ${HOSTNAME} $"
+	wmctrl -lxG | tr -s ' ' | grep -P "${no_title_wins}" | grep ".*491 194 sublime_text.*" | cut -d' ' -f1
+elif [[ $1 == 2 ]]; then
+	wmctrl -lxG | tr -s ' ' | grep UNREGISTERED | cut -d' ' -f1
+fi

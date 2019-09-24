@@ -1,0 +1,22 @@
+!! dune
+
+#define fg	#A6A28C
+#define bg	#20201D
+#define crs	#FEFBEC
+
+#define blk	#20201D
+#define blk2	#20201D
+#define red	#D73737
+#define red2	#D73737
+#define grn	#60AC39
+#define grn2	#60AC39
+#define ylw	#AE9513
+#define ylw2	#AE9513
+#define blu	#6684E1
+#define blu2    #358bd7
+#define mag	#B854D4
+#define mag2	#B854D4
+#define cyn	#1FAD83
+#define cyn2    #1FAD83
+#define wht	#A6A28C
+#define wht2	#FEFBEC

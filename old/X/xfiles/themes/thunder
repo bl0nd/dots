@@ -1,0 +1,22 @@
+!! thunder
+
+#define fg	#2A1909
+#define bg	#CEBB9C
+#define crs	#5C3F1C
+
+#define blk	#231A0E
+#define blk2	#33281A
+#define red	#CC8B73
+#define red2	#A04628
+#define grn	#54854F
+#define grn2	#1FA523
+#define ylw	#ED9C4E
+#define ylw2	#E5BB92
+#define blu	#65A6B4
+#define blu2    #358BD7
+#define mag	#806E92
+#define mag2	#836C9A
+#define cyn	#1AB2A7
+#define cyn2    #00FFED
+#define wht	#F5DFBB
+#define wht2	#DCDCDC

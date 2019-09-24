@@ -1,0 +1,212 @@
+# >> Variables
+  # Modifiers
+set $super2 Mod1
+set $super bindsym Mod4
+
+  # focus, movement, resize
+set $up k
+set $down j
+set $left h
+set $right l
+
+
+# >> General Settings
+  # Audio
+bindsym F3 exec --no-startup-id amixer set Master 2%+
+bindsym F2 exec --no-startup-id amixer set Master 2%-
+bindsym F1 exec --no-startup-id amixer set Master toggle
+
+  # Brightness
+bindsym F6 exec --no-startup-id light -A 6
+bindsym F5 exec --no-startup-id light -U 6
+
+
+  # Power Management
+$super+Shift+period exec systemctl suspend
+
+
+# >> Appearance
+  # fonts
+# font pango: Arial 12
+# font pango: Monaco 10
+# font pango: Hack 10
+# font pango: monospace 10
+# font pango: DejaVu Sans Mono 10
+font pango: FixedFixedsys 12
+
+  # window colors          border           bg               text             indic
+# MONDO-BEGIN
+client.focused             #4C83AD          #4C83AD          #EEE8D5          #4C83AD
+client.focused_inactive    #445E67          #445E67          #BABAA9          #445E67
+client.unfocused           #445E67          #445E67          #BABAA9          #445E67
+client.urgent              #D4665D          #D4665D          #EEE8D5          #D4665D
+# MONDO-END
+
+hide_edge_borders smart
+
+
+# >> Applications
+  # urxvt
+$super+Return exec --no-startup-id urxvtc
+$super+Shift+Return exec --no-startup-id urxvtc -name turxvt
+
+  # rofi
+$super+d exec --no-startup-id rofi -show run
+$super+i exec --no-startup-id ~/opt/rofi-fontawesome/fontawesome-menu/fontawesome-menu -f ~/opt/rofi-fontawesome/fa5-icon-list.txt
+
+  # thunar
+$super+e exec --no-startup-id thunar
+
+  # chromium
+$super+c exec --no-startup-id chromium --disable-infobars --disablesession-crashed-bubble
+
+  # sublime
+$super+s exec --no-startup-id subl3
+
+  # gvim
+$super+g exec --no-startup-id gvim
+
+  # onenote
+$super+o exec --no-startup-id ~/opt/p3x-onenote
+
+  # betterlockscreen
+$super+period exec --no-startup-id betterlockscreen -l blur
+
+  # polybar
+$super+p exec --no-startup-id polybar-msg cmd toggle
+exec_always --no-startup-id ~/.scripts/polybar/polybar_launch
+exec_always --no-startup-id ~/.scripts/i3/i3listen.py
+
+# >> Windows
+
+  # auto-float windows=
+for_window[class="URxvt" instance="turxvt"] floating enable
+for_window[class="feh"] floating enable
+for_window[class="Thunar"] floating enable
+for_window[class="Thunderbird"] floating enable
+for_window[class="Lxappearance"] floating enable
+
+  # title
+for_window [class=".*"] title_format "<span rise='5120'>%instance</span>"
+
+  # mouse
+focus_follows_mouse no
+
+  # kill focused window
+$super+Shift+q kill
+
+  # change focus
+$super+$left focus left
+$super+$down focus down
+$super+$up focus up
+$super+$right focus right
+
+$super+Left focus left
+$super+Down focus down
+$super+Up focus up
+$super+Right focus right
+
+  # move focused window
+$super+Shift+$left move left
+$super+Shift+$down move down
+$super+Shift+$up move up
+$super+Shift+$right move right
+
+$super+Shift+Left move left
+$super+Shift+Down move down
+$super+Shift+Up move up
+$super+Shift+Right move right
+
+  # resize window
+$super+Control+$right     resize shrink width 10 px or 10 ppt
+$super+Control+$up        resize grow height 10 px or 10 ppt
+$super+Control+$down      resize shrink height 10 px or 10 ppt
+$super+Control+$left      resize grow width 10 px or 10 ppt
+
+
+# >> Split
+  # split in horizontal orientation
+bindsym $super2+h split h
+
+  # split in vertical orientation
+bindsym $super2+v split v
+
+
+# >> Floating / tiling
+  # use Mouse+$super2 to drag floating windows to their wanted position
+floating_modifier Mod1
+
+  # toggle tiling / floating
+$super+Shift+space floating toggle
+
+  # change focus between tiling / floating windows
+$super+space focus mode_toggle
+  # enter fullscreen mode for the focused container
+bindsym $super2+f fullscreen toggle
+
+
+# >> Containers
+  # change container layout (stacked, tabbed, toggle split)
+bindsym $super2+g layout toggle tabbed splith splitv
+
+  # focus the parent container
+$super+a focus parent
+
+  # focus the child container
+#$super+d focus child
+
+
+# >> Workspace
+  # Define names for default workspaces for which we configure key bindings later on.
+  # We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+  # switch to workspace
+$super+1 workspace $ws1
+$super+2 workspace $ws2
+$super+3 workspace $ws3
+$super+4 workspace $ws4
+$super+5 workspace $ws5
+$super+6 workspace $ws6
+$super+7 workspace $ws7
+$super+8 workspace $ws8
+$super+9 workspace $ws9
+$super+0 workspace $ws10
+
+  # move focused container to workspace
+$super+Shift+1 move container to workspace $ws1
+$super+Shift+2 move container to workspace $ws2
+$super+Shift+3 move container to workspace $ws3
+$super+Shift+4 move container to workspace $ws4
+$super+Shift+5 move container to workspace $ws5
+$super+Shift+6 move container to workspace $ws6
+$super+Shift+7 move container to workspace $ws7
+$super+Shift+8 move container to workspace $ws8
+$super+Shift+9 move container to workspace $ws9
+$super+Shift+0 move container to workspace $ws10
+
+
+# >> i3
+  # reload the configuration file
+$super+Shift+c reload
+  # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+$super+Shift+r restart
+  # exit i3 (logs you out of your X session)
+#$super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+
+# >> Xresources
+bindsym $super2+x exec xrdb -merge ~/.Xresources
+
+
+# >> Display
+bindsym $super2+Shift+x exec xrandr

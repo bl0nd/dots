@@ -1,0 +1,22 @@
+!! arc-dark
+
+#define bg	#2f343f
+#define fg	#d7d7d7
+#define crs	#c7c7c7
+
+#define blk	#383c4a
+#define blk2	#383c4a
+#define red	#e28d9d
+#define red2	#e28d9d
+#define grn	#bfd888
+#define grn2	#bfd888
+#define ylw	#df936c
+#define ylw2	#df936c
+#define blu	#5D639C
+#define blu2	#5294e2
+#define mag    #f74771
+#define mag2	#f74771
+#define cyn	#7c818c
+#define cyn2	#91A4CC
+#define wht	#d7d7d7
+#define wht2	#d7d7d7

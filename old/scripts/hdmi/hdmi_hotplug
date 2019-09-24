@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# >> auto-connect to HDMI monitors
+if [[ $(xrandr | grep "HDMI-2 connected") ]]; then
+    xrandr --output eDP-1 --mode 1920x1080
+    xrandr --output HDMI-2 --auto --same-as eDP-1
+    xrandr --output DP-1 --mode 1680x1050 --left-of HDMI-2
+# >> Only show on laptop if monitor is disconnected
+elif [[ $(xrandr | grep "eDP-1 connected primary 1920x1080") ]] && \
+     [[ $(xrandr | grep "HDMI-2 disconnected") ]]; then
+    xrandr --output HDMI-2 --off
+    xrandr --output eDP-1 --mode 2560x1440
+fi
+
+i3-msg restart
+[[ -f /home/jason/.fehbg ]] && sh /home/jason/.fehbg
+
+# Caps Lock
+xmodmap -e "clear lock"
+xmodmap -e "keysym Caps_Lock = Escape"
+
+# Keyboard
+xset r rate 250 30

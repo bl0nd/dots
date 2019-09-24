@@ -1,0 +1,22 @@
+!! nikes
+
+#define fg	#4B575A
+#define bg	#BABAA9
+#define crs	#FFCC66
+
+#define blk	#2B2B2B
+#define blk2	#414D51
+#define red	#D4665D
+#define red2	#CF4949
+#define grn	#61854E
+#define grn2	#3FA95F
+#define ylw	#CBAB49
+#define ylw2	#D5D696
+#define blu	#4C83AD
+#define blu2    #1B79A7
+#define mag	#6B7DB4
+#define mag2	#6B7DB4
+#define cyn	#445E67
+#define cyn2    #0FB5C7
+#define wht	#DCDCDC
+#define wht2	#D5D5D5

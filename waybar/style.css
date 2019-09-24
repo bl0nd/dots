@@ -13,18 +13,6 @@ window#waybar {
     color: #ffffff;
 }
 
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #ffffff;
-    border-bottom: 3px solid transparent;
-}
-
-#workspaces button.focused {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
 #clock,
 #battery,
 #backlight,
