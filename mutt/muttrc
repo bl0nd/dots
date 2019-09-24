@@ -1,0 +1,123 @@
+source "gpg -d ~/.config/mutt/passwords.gpg |"
+
+###############################
+# Account
+###############################
+set imap_user="td.satch"
+set smtp_url="smtp://$imap_user@smtp.gmail.com:587"
+set smtp_authenticators='login'
+set realname="Jason Phan"
+
+###############################
+# Editor
+###############################
+set editor="nvim"
+set wrap=72
+
+###############################
+# Composing
+###############################
+set from="td.satch@gmail.com"
+set use_from=yes 
+set edit_headers=yes
+set signature="~/.config/mutt/signature"
+set sig_dashes=no
+set fast_reply=yes
+set text_flowed=yes
+set timeout=5
+
+###############################
+# IMAP
+###############################
+set imap_keepalive=300
+unset imap_passive
+
+###############################
+# Mailboxes
+###############################
+mailboxes =INBOX ="[Gmail]/Drafts" ="[Gmail]/Sent Mail" ="[Gmail]/Trash"
+set folder="imaps://imap.gmail.com"
+set spoolfile="+INBOX"
+set mail_check=5
+set postponed="+[Gmail]/Drafts"
+set trash='+[Gmail]/Trash'
+set record=""
+set sleep_time=0
+
+###############################
+# Formatting
+###############################
+set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
+set date_format="%b %d"
+set index_format="%4C %Z %D %-15.15F   %s"
+
+###############################
+# Sorting
+###############################
+set sort='threads'
+set sort_aux='last-date-received'
+set sort_re
+set reply_regexp="^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+###############################
+# Status Bar
+###############################
+set status_format="[ Folder: %f ] [%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
+
+###############################
+# Cache
+###############################
+set header_cache=~/.config/mutt/cache/headers
+set message_cachedir=~/.config/mutt/cache/bodies
+set certificate_file=~/.config/mutt/certificates
+
+###############################
+# Text Format
+###############################
+alternative_order text/plain text/html *
+auto_view text/html
+set mailcap_path=~/.config/mutt/mailcap
+
+###############################
+# Index View
+###############################
+set pager_index_lines=10
+set pager_context=3
+set pager_stop=yes
+set tilde
+unset markers
+
+###############################
+# Bindings
+###############################
+# General
+bind index <tab> sync-mailbox
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# Sane copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+# Folders
+macro index,pager ,m "<change-folder>=INBOX<enter>" "Go to Inbox"
+macro index,pager ,d "<change-folder>=[Gmail]/Drafts<enter>" "Go to Drafts"
+macro index,pager ,s "<change-folder>=[Gmail]/Sent<tab><enter>" "Go to Sent Mail"
+macro index,pager ,a "<change-folder>=[Gmail]/All<tab><enter>" "Go to All Mail"
+macro index,pager ,t "<change-folder>=[Gmail]/Trash<enter>" "Go to Trash"
+macro index,pager a "<enter-command>unset resolve<enter><enter-command>unset trash<enter><clear-flag>N<enter-command>set resolve<enter><delete-message><enter>" "Archive"
+macro index,pager u ";s+INBOX<enter><enter>" "Move to Inbox"
+macro index,pager !  <save-message>=[Gmail]/Spam<enter><enter> "Report spam"
+macro index,pager +  <save-message>=[Gmail]/Important<enter><enter> "Mark as Important"
+
+###############################
+# Color
+###############################
+source ~/.config/mutt/colors/jason.muttrc
+source ~/.config/mutt/colors/patch-highlighting.muttrc
+
+###############################
+# Security
+###############################
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set ssl_use_sslv3=yes

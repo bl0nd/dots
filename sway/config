@@ -1,0 +1,248 @@
+########################
+#      Variables
+########################
+
+
+# Modifiers
+set $super2 Mod1
+set $super bindsym Mod4
+
+# Focus, movement, resize
+set $up    k
+set $down  j
+set $left  h
+set $right l
+
+# Terminal
+set $term alacritty
+
+# System
+set $laptop eDP-1
+
+
+########################
+#       System
+########################
+
+
+#
+# Font
+#
+
+font pango:Hack
+
+#
+# Window
+#
+
+for_window [title=".*"] title_format "%app_id"
+for_window [class=".*"] title_format "%class"
+
+# Auto-float windows
+#for_window [title="Alacritty"] floating enable
+for_window [app_id="thunar"]   floating enable
+
+hide_edge_borders smart
+
+# Bar
+bar {
+	position top
+}
+
+#
+# Keyboard
+#
+
+input "1:1:AT_Translated_Set_2_keyboard" {
+	xkb_options caps:escape
+	repeat_delay 250
+	repeat_rate 30
+}
+
+input "1240:61138:Massdrop_Inc._CTRL_Keyboard" {
+	xkb_options caps:escape
+	repeat_delay 250
+	repeat_rate 30
+}
+
+#
+# Mouse
+#
+
+focus_follows_mouse no
+
+#
+# Display
+#
+
+# Monitors
+# XXX: For some reason they're switched arround, otherwise the small monitor 
+# isn't on the left of the center one.
+
+#output "Samsung Electric Company C27591 HTHJA02238" {
+output DP-1 {
+	pos 0,0
+	res 1920x1080
+	bg ~/pix/mudkip.jpg stretch
+}
+
+#output "Samsung Electric Company SyncMaster HVFP204824" {
+output HDMI-A-2 {
+	pos 1920,0
+	res 1920x1080
+	bg ~/pix/mudkip.jpg stretch
+}
+
+workspace 1 output "Samsung Electric Company C27591 HTHJA02238"
+
+# Clamshell mode
+bindswitch --locked lid:on  output $laptop disable
+bindswitch --locked lid:off output $laptop enable
+
+
+########################
+#       Keybinds
+########################
+
+
+#
+# System
+#
+$super+Shift+r reload
+$super+Shift+period exec systemctl suspend
+
+#
+# Applications
+#
+
+# Alacritty
+$super+Return       exec --no-startup-id $term
+$super+Shift+Return exec --no-startup-id $term -title t$term
+
+# Wofi
+#$super+d exec --no-startup-id wofi -show run
+
+# Thunar
+$super+e exec --no-startup-id thunar
+
+# Firefox
+$super+c exec --no-startup-id firefox
+
+# Betterlockscreen
+#$super+period exec --no-startup-id betterlockscreen -l blur
+
+# Polybar
+#$super+p exec --no-startup-id polybar-msg cmd toggle
+#exec_always --no-startup-id ~/.scripts/polybar/polybar_launch
+#exec_always --no-startup-id ~/.scripts/i3/i3listen.py
+
+# Kill focused window
+$super+Shift+q kill
+
+# Change focus
+$super+$left  focus left
+$super+$down  focus down
+$super+$up    focus up
+$super+$right focus right
+
+$super+Left  focus left
+$super+Down  focus down
+$super+Up    focus up
+$super+Right focus right
+
+# Move focused window
+$super+Shift+$left move left
+$super+Shift+$down move down
+$super+Shift+$up move up
+$super+Shift+$right move right
+
+$super+Shift+Left move left
+$super+Shift+Down move down
+$super+Shift+Up move up
+$super+Shift+Right move right
+
+# Resize window
+$super+Control+$right resize shrink width  10 px or 10 ppt
+$super+Control+$up    resize grow   height 10 px or 10 ppt
+$super+Control+$down  resize shrink height 10 px or 10 ppt
+$super+Control+$left  resize grow   width  10 px or 10 ppt
+
+#
+# Split
+#
+
+# Split in horizontal orientation
+bindsym $super2+h split h
+
+# Split in vertical orientation
+bindsym $super2+v split v
+
+#
+# Floating / tiling
+#
+
+# Use Mouse+$super2 to drag floating windows to their wanted position
+floating_modifier Mod1
+
+# Toggle tiling / floating
+$super+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+$super+space focus mode_toggle
+
+# Enter fullscreen mode for the focused container
+bindsym $super2+f fullscreen toggle
+
+#
+# Containers
+#
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $super2+g layout toggle tabbed splith splitv
+
+# Focus the parent container
+$super+a focus parent
+
+# Focus the child container
+#$super+d focus child
+
+#
+# Workspace
+#
+
+# Define names for default workspaces for which we configure key bindings later
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Switch to workspace
+$super+1 workspace $ws1
+$super+2 workspace $ws2
+$super+3 workspace $ws3
+$super+4 workspace $ws4
+$super+5 workspace $ws5
+$super+6 workspace $ws6
+$super+7 workspace $ws7
+$super+8 workspace $ws8
+$super+9 workspace $ws9
+$super+0 workspace $ws10
+
+# Move focused container to workspace
+$super+Shift+1 move container to workspace $ws1
+$super+Shift+2 move container to workspace $ws2
+$super+Shift+3 move container to workspace $ws3
+$super+Shift+4 move container to workspace $ws4
+$super+Shift+5 move container to workspace $ws5
+$super+Shift+6 move container to workspace $ws6
+$super+Shift+7 move container to workspace $ws7
+$super+Shift+8 move container to workspace $ws8
+$super+Shift+9 move container to workspace $ws9
+$super+Shift+0 move container to workspace $ws10

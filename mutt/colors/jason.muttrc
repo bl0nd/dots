@@ -1,0 +1,37 @@
+# general ------------ foreground ---- background -----------------------------
+color error		color196	default
+color indicator		color254	color68
+color markers		color7	        default
+color message		color254	default
+color normal		color254 	default
+color prompt		color254        default
+color search		color84		default
+color status 		color254  	color68
+color tilde		color254	default
+color tree		color203  	default
+
+# message index ------ foreground ---- background -----------------------------
+color index		color210	default 	~D # deleted messages
+color index		color84		default 	~F # flagged messages (TODO)
+color index		color178        default 	~N # new messages
+color index		color254	default 	~Q # messages which have been replied to
+color index		color215	default 	~T # tagged messages (TODO)
+color index		color141	default		~v # messages part of a collapsed thread (TODO)
+
+# message headers ---- foreground ---- background -----------------------------
+color hdrdefault	color8		default
+color header		color7  	default		^Subject:.*
+
+# message body ------- foreground ---- background -----------------------------
+color attachment	color228	default
+color body		color254	default		[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+               # email addresses
+color body		color75 	default		(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+        # URLs
+color body		color254	default		(^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$) # *bold* text
+color body		color254	default		(^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)     # _underlined_ text
+color body		color254	default		(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)     # /italic/ text
+color quoted		color8		default
+color quoted1		color8	        default
+color quoted2		color8		default
+color quoted3		color8  	default
+color quoted4		color8	        default
+color signature		color254	default
