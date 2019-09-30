@@ -1,6 +1,8 @@
 image: archlinux
 sources:
         - https://git.sr.ht/~satchmo/dots
+secrets:
+        - 7fb19c59-5aeb-4a84-83bb-8056148a41e3
 tasks:
         - clone_github: |
                 cd dots
