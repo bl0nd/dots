@@ -1,0 +1,48 @@
+!! Theme:    thunder
+
+!! General
+bg           #CEBB9C
+bg2          #E5CA9E
+
+fg           #2A1909
+comment      #B5A37F
+cursortheme  #5C3F1C
+
+!! Colors (primary)
+red          #CC8B73
+green        #54854F
+blue         #65A6B4
+yellow       #ED9C4E
+cyan         #1AB2A7
+magenta      #806E92
+orange
+dark         #231A0E
+light        #F5DFBB
+
+!! Colors (alternate)
+red2         #A04628
+green2       #1FA523
+blue2        #358BD7
+yellow2      #E5BB92
+cyan2        #00FFED
+magenta2     #836C9A
+orange2
+dark2        #33281A
+light2       #DCDCDC
+
+!! Window/Selection
+activebg     yellow
+activefg     light
+activehl     dark2
+
+inactivebg   bg2
+inactivefg   comment
+
+selectedbg   dark
+selectedfg   light
+
+! Applications
+xtheme       .xfiles/themes/thunder
+rofitheme    nikes.rasi
+
+vim_clr      seoul256-light

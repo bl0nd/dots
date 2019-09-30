@@ -1,0 +1,48 @@
+!! Theme:
+
+!! General
+bg           #20201D
+bg2
+
+fg           #A6A28C
+comment      #747A68
+cursortheme  #FEFBEC
+
+!! Colors (primary)
+red          #D73737
+green        #60AC39
+blue         #6684E1
+yellow       #AE9513
+cyan         #1FAD83
+magenta      #B854D4
+orange
+dark         #20201D
+light        #FEFBEC
+
+!! Colors (alternate)
+red2         #D73737
+green2       #60AC39
+blue2        #358BD7
+yellow2      #AE9513
+cyan2        #1FAD83
+magenta2     #B854D4
+orange2
+dark2        #20201D
+light2       #A6A28C
+
+!! Window/Selection
+activebg     red
+activefg     light
+activehl	 dark
+
+inactivebg   dark
+inactivefg   fg
+
+selectedbg   dark
+selectedfg   light
+
+! Applications
+xtheme       .xfiles/themes/dune
+rofitheme    onedark.rasi
+
+vim_clr      base16-atelier-dune

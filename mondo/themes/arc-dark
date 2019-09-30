@@ -1,0 +1,48 @@
+!! Theme:    arc-dark
+
+!! General
+bg           #2F343F
+bg2          #3E3A4F
+
+fg           #D7D7D7
+comment      #AAAAAA
+cursortheme  #C7C7C7
+
+!! Colors (primary)
+red          #E28D9D
+green        #BFD888
+blue         #5D639C
+yellow       #DF936C
+cyan         #7C818C
+magenta      #F74771
+orange
+dark         #383C4A
+light        #D7D7D7
+
+!! Colors (alternate)
+red2         #E28D9D
+green2       #BFD888
+blue2        #5294E2
+yellow2      #DF936C
+cyan2        #91A4CC
+magenta2     #F74771
+orange2
+dark2        #383C4A
+light2       #D7D7D7
+
+!! Window/Selection
+activebg     blue
+activefg     light
+activehl     dark
+
+inactivebg   cyan
+inactivefg   fg
+
+selectedbg   dark
+selectedfg   light
+
+! Applications
+xtheme       .xfiles/themes/arc-dark
+rofitheme    onedark.rasi
+
+vim_clr      onedark

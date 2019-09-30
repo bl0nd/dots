@@ -1,0 +1,62 @@
+!! General
+bg
+bg2
+
+fg
+comment
+cursortheme
+
+!! Colors (primary)
+red
+green
+blue
+yellow
+cyan
+magenta
+orange
+dark
+light
+
+!! Colors (alternate)
+red2
+green2
+blue2
+yellow2
+cyan2
+magenta2
+orange2
+dark2
+light2
+
+!! Window/Selection
+activebg
+activefg
+activehl
+
+inactivebg
+inactivefg
+
+selectedbg
+selectedfg
+
+! Applications
+xtheme
+rofitheme
+
+vim_fnt
+vim_clr
+vim_air
+
+qt_text1    
+qt_text2    
+qt_tx_box   
+qt_tx_titlea
+qt_fg_push  
+qt_bg_win   
+qt_bg_but   
+qt_bg_title1
+qt_bg_title2
+qt_bg_txbx  
+qt_bd_win1  
+qt_bd_olir  
+qt_bd_ir2   

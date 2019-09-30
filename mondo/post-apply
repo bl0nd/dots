@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# This script is executed AFTER all other applying
+# actions and scripts are finished, when mondo is 
+# executed with the apply option (-a).
+
+# The intension of this script is to let you adjust
+# your environment after applying a new theme.
+
+# For instance one might want to reload certain processes
+# like windowmanagers and statusbars. 
+
+# $1 in this script contains the output from
+# `pre-apply`. By using eval you can pass multiple
+# variables and stuff between the scripts.
+
+# eval "${1}"
+
+i3-msg reload >> /dev/null
+xrdb -merge ~/.Xresources
+kill -1 $(pidof urxvtd)

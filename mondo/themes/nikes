@@ -1,0 +1,48 @@
+!! Theme:    nikes
+
+!! General
+bg           #BABAA9
+bg2          #FFFFD8
+
+fg           #4B575A
+comment      #B8B09A
+cursortheme  #FFCC66
+
+!! Colors (primary)
+red          #D4665D
+green        #61854E
+blue         #4C83AD
+yellow       #CBAB49
+cyan         #445E67
+magenta      #6B7DB4
+orange
+dark         #2B2B2B
+light        #EEE8D5
+
+!! Colors (alternate)
+red2         #CF4949
+green2       #3FA95F
+blue2        #1B79A7
+yellow2      #D5D696
+cyan2        #0FB5C7
+magenta2     #6B7DB4
+orange2
+dark2        #414D51
+light2       #DCDCDC
+
+!! Window/Selection
+activebg     blue
+activefg     light
+activehl     dark
+
+inactivebg   cyan
+inactivefg   bg
+
+selectedbg   #8D938D
+selectedfg   light
+
+! Applications
+xtheme       .xfiles/themes/nikes
+rofitheme    nikes.rasi
+
+vim_clr      gruvbox

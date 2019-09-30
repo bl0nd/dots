@@ -1,0 +1,4 @@
+client.focused             %%activebg%%          %%activebg%%          %%activefg%%          %%activebg%%
+client.focused_inactive    %%inactivebg%%          %%inactivebg%%          %%inactivefg%%          %%inactivebg%%
+client.unfocused           %%inactivebg%%          %%inactivebg%%          %%inactivefg%%          %%inactivebg%%
+client.urgent              %%red%%          %%red%%          %%activefg%%          %%red%%

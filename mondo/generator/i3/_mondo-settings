@@ -1,0 +1,16 @@
+# The content of this file is sourced by mondo.
+# The syntax is bash. But it is not recommended to
+# add any script functions other then variable declaration
+# in this file.
+
+# If ext is set, it will be appended as an extension
+# when files are generated.
+# ext=""
+
+# target can be an (absolute) file path to where
+# the file will be copied when a theme is applied.
+target="~/.config/i3/config"
+
+# only replace content between 
+# MONDO-BEGIN and MONDO-END in target.
+inject=True

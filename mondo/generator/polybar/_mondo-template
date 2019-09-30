@@ -1,0 +1,7 @@
+background = %%activebg%%
+background-alt = %%inactivebg%%
+foreground = %%activefg%%
+foreground-alt = %%inactivefg%%
+primary = %%redb%%
+secondary = %%redb%%
+alert = %%redb%%
