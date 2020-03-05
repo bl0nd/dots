@@ -42,7 +42,7 @@ window:
   # Values for `decorations`:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
-  decorations: full
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -74,7 +74,8 @@ scrolling:
   # to allow mouse scrolling for applications like `man`.
   #
   # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
+  # Deprecated
+  #faux_multiplier: 3
 
   # Scroll to the bottom when new text is written to the terminal.
   auto_scroll: false
@@ -95,7 +96,7 @@ font:
     family: Hack
     style: Italic
 
-  size: 15.0
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -215,7 +216,7 @@ live_config_reload: true
 
 # Shell
 shell:
-  program: /usr/bin/bash
+  program: /bin/bash
 
 # Startup directory
 working_directory: /home/jason/
