@@ -150,16 +150,18 @@ $super+Shift+Return exec --no-startup-id $term -title t$term
 $super+e exec --no-startup-id thunar
 
 # Firefox
-$super+c exec --no-startup-id firefox
+#$super+c exec --no-startup-id firefox
+$super+c exec --no-startup-id chromium
 
 # Geany
-$super+g exec --no-startup-id geany
+#$super+g exec --no-startup-id geany
 
 # Betterlockscreen
 #$super+period exec --no-startup-id betterlockscreen -l blur
 
 # Polybar
-#$super+p exec --no-startup-id polybar-msg cmd toggle
+$super+p exec --no-startup-id killall -SIGUSR1 waybar
+#$super+p exec --no-startup-id waybar-msg cmd toggle
 #exec_always --no-startup-id ~/.scripts/polybar/polybar_launch
 #exec_always --no-startup-id ~/.scripts/i3/i3listen.py
 
