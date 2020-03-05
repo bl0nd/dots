@@ -8,7 +8,7 @@
     "height":   20,
 
     "modules-left":   ["sway/workspaces"],
-    "modules-center": ["sway/window"],
+    /*"modules-center": ["sway/window"],*/
     "modules-right":  ["network",
 		       "backlight",
 		       "pulseaudio",
@@ -20,34 +20,36 @@
     //
 
     "clock": {
-	"format": "{:%H:%M  %p}"
+	"format": "{:%I:%M %p}"
     },
+
     "backlight": {
-	"format": "{percent}  {icon}",
+	"format": "{icon} {percent}",
         "format-icons": ["", ""]
     },
+
     "battery": {
         "states": {
             // "good": 95,
             "warning": 30,
             "critical": 15
         },
-	"format": "{capacity}  {icon}",
-	"format-charging": "{capacity}  ",
-	"format-plugged": "{capacity}  ",
+	"format": "{icon} {capacity}",
+	"format-charging": " {capacity}",
+	"format-plugged": " {capacity}",
 	"format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "network": {
-	"format-wifi": "{essid}  ",
-	"format-ethernet": "{essid}  ",
+	"format-wifi": " {essid}",
+	"format-ethernet": " {essid}",
 	"format-disconnected": "⚠"
     },
     "pulseaudio": {
-	"format": "{volume}  {icon}",
-	"format-muted": "",
+	"format": "{icon} {volume} ",
+	"format-muted": "",
         "format-icons": {
 	    "default": ["", "", ""]
 	}
