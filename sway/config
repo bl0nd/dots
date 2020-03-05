@@ -32,6 +32,12 @@ set $laptop eDP-1
 font pango:Hack
 
 #
+# Brightness
+#
+bindsym F5 exec brightnessctl set 5%-
+bindsym F6 exec brightnessctl set +5%
+
+#
 # Window
 #
 
@@ -42,11 +48,14 @@ for_window [class=".*"] title_format "%class"
 #for_window [title="Alacritty"] floating enable
 for_window [app_id="thunar"]   floating enable
 
+for_window [title=".*"] border pixel
+for_window [class=".*"] border pixel
 hide_edge_borders smart
 
 # Bar
 bar {
 	position top
+	swaybar_command waybar
 }
 
 #
@@ -76,24 +85,39 @@ focus_follows_mouse no
 #
 
 # Monitors
-# XXX: For some reason they're switched arround, otherwise the small monitor 
-# isn't on the left of the center one.
+# XXX: For some reason their ID's are switched around, otherwise the small
+# monitor isn't on the left of the center one.
+
+# Laptop monitor
+output eDP-1 {
+	pos 0,0
+	res 1920x1080
+	bg ~/pix/snk1.png fill
+	scale 1.3
+}
 
 #output "Samsung Electric Company C27591 HTHJA02238" {
 output DP-1 {
 	pos 0,0
 	res 1920x1080
-	bg ~/pix/mudkip.jpg stretch
+	bg ~/pix/snk1.png fill
 }
 
 #output "Samsung Electric Company SyncMaster HVFP204824" {
 output HDMI-A-2 {
-	pos 1920,0
+	pos 1680,0
 	res 1920x1080
-	bg ~/pix/mudkip.jpg stretch
+	bg ~/pix/snk1.png fill
 }
 
-workspace 1 output "Samsung Electric Company C27591 HTHJA02238"
+workspace 1 output HDMI-A-2
+workspace 2 output HDMI-A-2
+workspace 3 output HDMI-A-2
+workspace 4 output HDMI-A-2
+workspace 5 output HDMI-A-2
+workspace 6 output HDMI-A-2
+workspace 7 output HDMI-A-2
+workspace 8 output HDMI-A-2
 
 # Clamshell mode
 bindswitch --locked lid:on  output $laptop disable
@@ -127,6 +151,9 @@ $super+e exec --no-startup-id thunar
 
 # Firefox
 $super+c exec --no-startup-id firefox
+
+# Geany
+$super+g exec --no-startup-id geany
 
 # Betterlockscreen
 #$super+period exec --no-startup-id betterlockscreen -l blur
