@@ -1,5 +1,9 @@
 " .vimrc
 
+"
+" IMPORTANT: DO NOT ERASE TRAILING WHITESPACE! Some mappings require them.
+"
+
 " >> Preamble ---------------------------------------------------------------{{{
 
 set shell=/bin/bash
@@ -22,11 +26,12 @@ call plug#begin('~/.vim/plugged')
 
 	" Nerd
 	Plug 'scrooloose/nerdtree'                      " Tree explorer
+	Plug 'albfan/nerdtree-git-plugin'               " Git ignore for NerdTREE
 	Plug 'scrooloose/nerdcommenter'                 " Comment functions
 	Plug 'ryanoasis/vim-devicons'                   " Nerd icons
 
 	" Windows
-	Plug 'qpkorr/vim-bufkill'                       " Closes buffer but doesn't change layout
+	Plug 'qpkorr/vim-bufkill'                       " Closes buffer w/out changing layout
 	Plug 'godlygeek/tabular'                        " Tabs
 
 	" Lines
@@ -38,7 +43,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'micha/vim-colors-solarized'               " Solarized theme
 	Plug 'joshdick/onedark.vim'                     " OneDark theme
 	Plug 'chriskempson/base16-vim'	                " Base-16 theme
+	Plug 'mike-hearn/base16-vim-lightline'          " Base-16 themes for lightline
 	Plug 'chrisbra/colorizer'                       " Hex colors
+	Plug 'dracula/vim', { 'name': 'dracula' }       " Dracula theme
+	Plug 'NLKNguyen/papercolor-theme'               " Paper theme
+	Plug 'vim-scripts/summerfruit256.vim'           " Summerfruit theme
+	Plug 'sainnhe/vim-color-forest-night'           " Forest night theme
 
 	" Git
 	Plug 'tpope/vim-fugitive'                       " Git
@@ -50,16 +60,16 @@ call plug#begin('~/.vim/plugged')
 	" Languages
 	Plug 'rust-lang/rust.vim' 	                " Rust
 	Plug 'cespare/vim-toml' 			" TOML
-	Plug 'xolox/vim-easytags' 			" Ctags
+	"Plug 'xolox/vim-easytags' 			" Ctags
 	Plug 'majutsushi/tagbar' 			" Ctag bar
-	
+
 	" Code
 	Plug 'ervandew/supertab'		        " Tab completion
 	Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code completion
 	Plug 'raimondi/delimitmate'	                " Completion for [], '', ()
 	Plug 'w0rp/ale'			                " Linter
-	Plug '/usr/local/opt/fzf' 			" Fuzzy finder
-	Plug 'junegunn/fzf.vim' 			" Fuzzy finder
+	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }  " FZF
+	Plug 'junegunn/fzf.vim'                         " FZF
 	Plug 'sickill/vim-pasta'                        " Better pasting
 	Plug 'xolox/vim-misc' 				" For ctags
 
@@ -162,6 +172,7 @@ set shiftwidth=8
 
 " Wrapping
 "set wrap
+"set textwidth=96   " Longer lines will be broken after white space
 set textwidth=80   " Longer lines will be broken after white space
 
 " Backups
@@ -185,16 +196,20 @@ endif
 " Color Scheme
 syntax on  " Overrule your color settings for highlighting stuff
 highlight clear SignColumn
+"set termguicolors
 
+"set background=dark
 set background=dark
 let base16colorspace=256  " Access colors present in 256 color space
 
 "" MONDO-BEGIN
 colorscheme base16-atelier-dune
+"colorscheme solarized8_light
+"colorscheme base16-github
 " MONDO-END
 
 " Tabs
-"autocmd FileType sh setlocal tabstop=4 shiftwidth=4
+autocmd FileType sh setlocal tabstop=4 shiftwidth=4
 autocmd FileType toml setlocal tabstop=2 shiftwidth=2
 
 " Mail
@@ -304,7 +319,7 @@ nnoremap zl :let@z=@"<cr>x$p:let @"=@z<cr>
 " >> Search & Movement ------------------------------------------------------{{{
 
 " Ripgrep
-nnoremap <leader>g :Rg 
+nnoremap <leader>g :Rg<cr>
 
 " Use sane regexes
 nnoremap / /\v
@@ -383,8 +398,9 @@ vnoremap <Space> za
 " >> Plugin-specific --------------------------------------------------------{{{
 
 " Ale
-"let g:ale_c_parse_makefile = 1
-"let g:ale_c_parse_compile_commands = 1
+let g:ale_c_parse_makefile = 1
+let g:ale_c_parse_compile_commands = 1
+let g:ale_cpp_gcc_options='-std=c++17'
 
 " NERDTree
 noremap <leader>N :NERDTreeToggle<cr>
@@ -453,11 +469,12 @@ let g:lightline = {
       \              [ 'percent' ],
       \              [ 'filetype' ] ],
       \ },
+      \ 'colorscheme': 'base16_github',
       \ }
 
 let g:lightline.subseparator = { 'left': '', 'right': '' }
 
 " Tagbar
-noremap <leader>t :Tagbar<cr>
+"noremap <leader>t :Tagbar<cr>
 
 " }}}
