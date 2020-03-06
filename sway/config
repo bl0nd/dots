@@ -150,8 +150,7 @@ $super+Shift+Return exec --no-startup-id $term -title t$term
 $super+e exec --no-startup-id thunar
 
 # Firefox
-#$super+c exec --no-startup-id firefox
-$super+c exec --no-startup-id chromium
+$super+c exec --no-startup-id MOZ_ENABLE_WAYLAND=1 firefox-developer-edition
 
 # Geany
 #$super+g exec --no-startup-id geany
