@@ -1,0 +1,25 @@
+/* Hide "New Tab" button */
+.newtab-button-box {
+  display: none;
+}
+#tabbar {
+  bottom: 0 !important; /* Eliminate dead space on bottom */
+}
+
+/* Hide Scrollbar */
+#tabbar { scrollbar-width: none; }
+
+/* Hide .twisty and adjust margins so favicons have 7px on left. */
+/*.tab .twisty {
+	visibility: hidden;
+	margin-left: -12px;
+}*/
+
+tab-item.active {
+  background-color: #D3D3D3;
+}
+
+tab-item:hover {
+  background: #D3D3D3 !important;
+  opacity: 1;
+}
