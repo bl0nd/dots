@@ -3,17 +3,17 @@
     border-bottom: 0;
     border-radius: 0;
     /*font-weight: bold;*/
-    /*font-family: FixedFixedsys;*/
-    font-size: 15px;
+    font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 1.0);
+    background-color: #d73737;
     color: #ffffff;
 }
 
 #workspaces button {
+    font-family: FixedFixedsys;
     padding: 0 5px;
     background-color: transparent;
     color: #ffffff;
@@ -21,7 +21,9 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    font-family: FixedFixedsys;
+    background-color: #d73737;
+    color: #000000;
     border-bottom: 3px solid #ffffff;
 }
 
@@ -32,28 +34,37 @@ window#waybar {
 #pulseaudio,
 
 #clock {
-    background-color: #64727D;
+    font-family: Hack;
+    padding: 0 8px;
+    background-color: #d73737;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    font-family: Hack;
+    padding: 0 8px;
+    background-color: #d73737;
+    color: #ffffff;
 }
 
 #battery.charging {
+    font-family: Hack;
+    padding: 0 8px;
     color: #ffffff;
-    background-color: #26A65B;
+    background-color: #d73737;
 }
 
 @keyframes blink {
     to {
+	padding: 0 8px;
         background-color: #ffffff;
-        color: #000000;
+        color: #ffffff;
     }
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
+    font-family: Hack;
+    padding: 0 8px;
+    background-color: #d73737;
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -63,27 +74,39 @@ window#waybar {
 }
 
 label:focus {
-    background-color: #000000;
+    font-family: Hack;
+    padding: 0 8px;
+    background-color: #d73737;
 }
 
 #backlight {
-    background-color: #90b1b1;
+    font-family: Hack;
+    padding: 0 8px;
+    background-color: #d73737;
 }
 
 #network {
-    background-color: #2980b9;
+    font-family: Hack;
+    padding: 0 8px;
+    background-color: #d73737;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    font-family: Hack;
+    padding: 0 8px;
+    background-color: #d73737;
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    font-family: Hack;
+    padding: 0 8px;
+    background-color: #d73737;
+    color: #ffffff;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
+    font-family: Hack;
+    padding: 0 8px;
+    background-color: #d73737;
     color: #2a5c45;
 }
